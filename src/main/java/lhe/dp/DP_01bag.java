@@ -52,7 +52,7 @@ public class DP_01bag {
 	  * 
 	  * 由于数组下标范围是0，1。。。，n-1
 	 */
-	public void buildMaxBenefit(){
+	public void buildOptimizeValue(){
 		//根据边界条件计算m[n-1][j]
 		for (int j=0;j<=c;j++){
 			if(j>=w[n-1]){
@@ -109,7 +109,7 @@ public class DP_01bag {
 	}
 	
 	public int[] process(){
-		this.buildMaxBenefit();
+		this.buildOptimizeValue();
 		this.buildOptimalSolution();
 		return x;
 	}

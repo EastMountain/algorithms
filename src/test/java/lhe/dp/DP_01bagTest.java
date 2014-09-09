@@ -10,7 +10,7 @@ public class DP_01bagTest extends TestCase {
     	int v[] = {30,80,20,50,60,90,70,500,40,10}; 
     	int c = 100;
     	DP_01bag bag = new DP_01bag(n,w,v,c);
-    	bag.buildMaxBenefit();
+    	bag.buildOptimizeValue();
     	bag.buildOptimalSolution();
     	bag.print();
     	
