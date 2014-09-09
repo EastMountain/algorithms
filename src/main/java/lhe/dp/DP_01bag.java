@@ -48,7 +48,8 @@ public class DP_01bag {
 	  * 当j>=w(i)时，有两种选择：
 	  * ⑴不装入物品i，这时的最大效益值与m(i+1,j)相同；
 	  * ⑵装入物品i，这时会产生效益v(i)，背包剩余容量为j-w(i)，可以选择物品i+1,…,n来装，最大效益值为m(i+1,j-w(i))+v(i)；
-	  *
+	  * 这时m(i,j)=max(m(i+1,j), m(i+1,j-w(i))+v(i))
+	  * 
 	  * 由于数组下标范围是0，1。。。，n-1
 	 */
 	public void buildMaxBenefit(){
@@ -114,24 +115,26 @@ public class DP_01bag {
 	}
 	
 	public void print(){
-		for(int i=0;i<n-1;i++){
-			System.out.print("	" + i + " ");
+		System.out.println("m[i][j]");
+		System.out.print("i\\j	");
+		for(int j=0;j<=c;j++){
+			System.out.print(j + "	");
 		}
-		
-		for(int i=0;i<n-1;i++){
-			System.out.println();
+		System.out.println();
+		for(int i=0;i<n;i++){
+			System.out.print(i+"	");
 			for(int j=0;j<=c;j++){
-				System.out.print(m[i][j] + " ");
+				System.out.print(m[i][j] + "	");
 			}
+			System.out.println();
 		}
 		
+		System.out.println();
 		System.out.println("x[i]");
-		for(int i=0;i<n-1;i++){
+		for(int i=0;i<n;i++){
 			System.out.print(x[i] + " ");
 		}
 	}
-	
-
 }
 
 
