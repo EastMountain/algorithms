@@ -11,7 +11,7 @@ public class DP_MaxHuiWen {
 	/**
 	 * 字符串数组
 	 */
-	private String str[];
+	private char str[];
 	
 	/**
 	 * 字符串数组长度
@@ -28,9 +28,9 @@ public class DP_MaxHuiWen {
 	/**
 	 * 最大回文字符串数组
 	 */
-	private String maxHuiWen[];
+	private char maxHuiWen[];
 	
-	public DP_MaxHuiWen(String str[]){
+	public DP_MaxHuiWen(char str[]){
 		this.str = str;
 		this.n = str.length ;
 		this.h = new boolean[n][n];
@@ -60,10 +60,10 @@ public class DP_MaxHuiWen {
 		
 		for(int i=n-1;i>=0;i--){
 			for(int j=i+1;j<n;j++){
-				if ((i+1==j) && (str[i].equals(str[j]))){
+				if ((i+1==j) && (str[i]==(str[j]))){
 					h[i][j]=true;
 				}else {
-					h[i][j] = h[i+1][j-1]&&(str[i].equals(str[j]));
+					h[i][j] = h[i+1][j-1]&&(str[i]==(str[j]));
 				}
 			}
 		}
@@ -86,13 +86,13 @@ public class DP_MaxHuiWen {
 			}
 		}
 		
-		maxHuiWen = new String[end-start+1];
+		maxHuiWen = new char[end-start+1];
 		for(int k=0;k<(end-start+1);k++){
 			maxHuiWen[k]=str[start+k];
 		}
 	}
 	
-	public String[] process(){
+	public char[] process(){
 		this.buildOptimizeValue();
 		this.buildOptimalSolution();
 		return maxHuiWen;

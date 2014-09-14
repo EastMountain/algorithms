@@ -5,10 +5,10 @@ import junit.framework.TestCase;
 public class DP_LCSTest  extends TestCase {
 
 	public void testDP_LCS(){
-		String xStr = "abct";
-		String yStr = "btc";
-    	String x[] = xStr.split(""); 
-    	String y[] = yStr.split(""); 
+		String xStr = "abctyyxcvf";
+		String yStr = "btcycf";
+    	char x[] = xStr.toCharArray(); 
+    	char y[] = yStr.toCharArray(); 
     	DP_LCS lcs = new DP_LCS(x,y);
     	lcs.buildOptimizeValue();
     	lcs.buildOptimalSolution();

@@ -22,15 +22,15 @@ public class DP_LCS {
 	/**
 	 * 序列X
 	 */
-	private String x[];
+	private char x[];
 	/**
 	 * 序列Y
 	 */
-	private String y[];
+	private char y[];
 	/**
 	 * 最长公共子序列Z
 	 */
-	private String z[];
+	private char z[];
 	
 	/**
 	 * 序列X的长度
@@ -55,7 +55,7 @@ public class DP_LCS {
 	 */
 	private int s[][];
 	
-	public DP_LCS(String x[], String y[]){
+	public DP_LCS(char x[], char y[]){
 		this.x=x;
 		this.y=y;
 		this.n=y.length;
@@ -90,7 +90,7 @@ public class DP_LCS {
 		 */
 		for(int i=m-1;i>=0;i--){
 			for(int j=n-1;j>=0;j--){
-				if(x[i].equals(y[j])){
+				if(x[i]==(y[j])){
 					c[i][j]=c[i+1][j+1]+1;
 				}else{
 					if(c[i+1][j]>c[i][j+1]){
@@ -117,7 +117,7 @@ public class DP_LCS {
 	public void buildOptimalSolution(){
 		for (int i=0;i<m;i++){
 			for(int j=0;j<n;j++){
-				if(x[i].equals(y[j])){
+				if(x[i]==(y[j])){
 					s[i][j]=1;
 				}else{
 					s[i][j]=0;
@@ -125,7 +125,7 @@ public class DP_LCS {
 			}
 		}
 		
-		z = new String[c[0][0]];
+		z = new char[c[0][0]];
 		
 		for(int t=0,w=0,i=0;i<m;i++){
 			for(int j=t;j<n;j++){
@@ -138,7 +138,7 @@ public class DP_LCS {
 		}
 	}
 	
-	public String[] process(){
+	public char[] process(){
 		this.buildOptimizeValue();
 		this.buildOptimalSolution();
 		return z;
