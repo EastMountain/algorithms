@@ -18,14 +18,16 @@ public class FindTheMinIntegerNotInArray {
 	}
 	
 	/**
+	 * 从a[n-1]向前遍历
+	 * 若a[i]<0 or a[i]>=n or a[i]=i,不变,遍历下一个
+	 * 若0<a[i]<n，将a[i]放到对应的位置i上：swap(a[a[i]],a[i])
 	 * 
+	 * 遍历一遍以后a[1]到丢失的最小整数之间是有序的，并且第一个a[i]!=i的数就是丢失的数（i>0）
 	  * 
 	 */
 	public void find(){
 		int n = a.length;
 		int temp;
-		int j=0;
-		int k=n-1;
 		for(int i=n-1;i>=0;i--){
 			while(a[i]>=0&&a[i]<n&&i!=a[i]){
 				if(a[i]==a[a[i]]){

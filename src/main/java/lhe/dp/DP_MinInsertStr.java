@@ -33,6 +33,10 @@ public class DP_MinInsertStr {
 		this.d=new int[n][n];
 	}
 	
+	/**
+	 * 
+	  * 方法一
+	 */
 	public void buildOptimizeValue(){
 		//若i>=j, 则d[i][j]=0
 		for(int i=0;i<n;i++){
@@ -59,7 +63,7 @@ public class DP_MinInsertStr {
 			}
 		}
 	}
-	
+
 	
 	public void print(){
 		System.out.println("str");
