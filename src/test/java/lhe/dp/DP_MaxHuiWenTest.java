@@ -6,7 +6,7 @@ public class DP_MaxHuiWenTest extends TestCase {
 
 	public void testDP_MaxHuiWen(){
 		String xStr = "abbctcbbkkkkkkabcdeedcba";
-    	String str[] = xStr.split(""); 
+		char str[] = xStr.toCharArray(); 
     	DP_MaxHuiWen mhw = new DP_MaxHuiWen(str);
     	mhw.buildOptimizeValue();
     	mhw.buildOptimalSolution();

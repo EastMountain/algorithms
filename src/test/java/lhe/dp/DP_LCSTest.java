@@ -13,6 +13,14 @@ public class DP_LCSTest  extends TestCase {
 //    	lcs.buildOptimizeValue();
 //    	lcs.buildOptimalSolution();
 //    	lcs.print();
+		String xStr = "abctyyxcvf";
+		String yStr = "btcycf";
+    	char x[] = xStr.toCharArray(); 
+    	char y[] = yStr.toCharArray(); 
+    	DP_LCS lcs = new DP_LCS(x,y);
+    	lcs.buildOptimizeValue();
+    	lcs.buildOptimalSolution();
+    	lcs.print();
     	
     	float fl = 111111111211111111121111111112111111111.1111111f;
     	System.out.println(fl);
