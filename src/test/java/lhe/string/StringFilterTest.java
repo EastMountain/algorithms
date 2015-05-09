@@ -1,5 +1,7 @@
 package lhe.string;
 
+import com.md.string.StringFilter;
+
 import junit.framework.TestCase;
 
 public class StringFilterTest  extends TestCase {

@@ -1,5 +1,7 @@
 package lhe.string;
 
+import com.md.string.Brackets;
+
 import junit.framework.TestCase;
 
 public class BracketsTest extends TestCase {
